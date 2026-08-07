@@ -1,0 +1,32 @@
+# Logs
+*.log
+
+# Dependencies
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+
+# Local files
+*.local
+
+# Editor
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Chrome extension packages
+*.crx
+*.pem

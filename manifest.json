@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "MarkRender",
+  "short_name": "MarkRender",
+  "version": "1.0.0",
+  "description": "Render local Markdown files directly in your browser with GitHub Flavored Markdown (GFM) support, syntax highlighting, and an automatic table of contents (TOC) for easy navigation.",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "MarkRender"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file:///*"
+      ],
+      "run_at": "document_idle",
+      "css": [
+        "css/github-markdown.min.css",
+        "css/highlight.css",
+        "css/styles.css"
+      ],
+      "js": [
+        "lib/marked.min.js",
+        "lib/highlight.min.js",
+        "core/detector.js",
+        "core/parser.js",
+        "core/toc.js",
+        "core/renderer.js",
+        "content.js"
+        ]
+    }
+  ]
+}

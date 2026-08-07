@@ -1,0 +1,199 @@
+#md-root {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  scroll-behavior: smooth;
+}
+
+#md-root #md-main {
+  width: 100%;
+  max-width: 980px;
+  padding: 10px;
+}
+
+#md-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0d1117;
+  font-family: monospace;
+}
+
+.toolbar-left,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-right {
+  margin-left: auto;
+}
+
+.version {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.toolbar-right a {
+  margin-left: 5px;
+  margin-right: 10px;
+  color: inherit;
+  font-size: 12px;
+}
+
+/* Sidebar - usando variáveis do GitHub */
+#md-root #md-sidebar {
+  width: 260px;
+  min-width: 260px;
+  height: 100vh;
+  overflow: auto;
+  position: sticky;
+  margin-top: 10px !important;
+  padding: 40px 20px;
+  background: var(--bgColor-default, #0d1117);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+}
+
+/* TOC */
+#md-root .md-toc-title {
+  margin-top: 0;
+  font-size: 18px;
+  color: var(--fgColor-default, #c9d1d9);
+}
+
+#md-root .md-toc {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#md-toc-icon-collapsed {
+  display: none;
+}
+
+#md-root .md-toc a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--fgColor-default, #c9d1d9);
+  margin-top: 2px;
+  margin-bottom: 2px;
+  line-height: 1.3rem;
+}
+
+#md-root .md-toc a:hover {
+  text-decoration: underline;
+  color: var(--fgColor-accent, #58a6ff);
+}
+
+/* Níveis do índice */
+#md-root .level-1 {
+  font-weight: bold;
+}
+
+#md-root .level-2 {
+  padding-left: 12px;
+}
+
+#md-root .level-3 {
+  padding-left: 24px;
+}
+
+#md-root .level-4 {
+  padding-left: 36px;
+}
+
+#md-root .level-5 {
+  padding-left: 48px;
+}
+
+#md-root .level-6 {
+  padding-left: 60px;
+}
+
+/* Markdown */
+#md-root .markdown-body {
+  padding: 27px;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+#md-root .markdown-body img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Código Markdown */
+#md-root .markdown-body pre {
+  overflow-x: auto;
+}
+
+#md-root .markdown-body pre code {
+  color: inherit;
+}
+
+/* button */
+#md-toggle-toc {
+  background-color: #0d1117;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#md-toc-icon {
+  transition: transform 0.2s ease;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Syntax Highlight - usando variáveis do GitHub */
+.hljs-string {
+  color: var(--fgColor-accent, #0969da);
+}
+
+.hljs-keyword {
+  color: var(--fgColor-danger, #d1242f);
+}
+
+.hljs-comment {
+  color: var(--fgColor-muted, #6a737d);
+}
+
+.hljs-function {
+  color: var(--fgColor-accent, #6f42c1);
+}
+
+.hljs-subst {
+  color: var(--fgColor-success, limegreen);
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  #md-root #md-sidebar {
+    display: none !important;
+  }
+
+  #md-root #md-main {
+    max-width: 100%;
+  }
+}
