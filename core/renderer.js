@@ -176,16 +176,20 @@ class Renderer {
 
     button.onclick = () => {
 
-      const hidden = sidebar.style.display === "none";
+  const hidden = sidebar.style.display === "none";
 
-      sidebar.style.display = hidden
-        ? "block"
-        : "none";
+  sidebar.style.display = hidden
+    ? "block"
+    : "none";
 
-      iconActive.style.display = hidden ? "block" : "none";
-      iconCollapsed.style.display = hidden ? "none" : "block";
+  iconActive.style.display = hidden ? "block" : "none";
+  iconCollapsed.style.display = hidden ? "none" : "block";
 
-    };
+  document.getElementById("md-root").classList.toggle(
+    "toc-open",
+    hidden
+  );
+};
 
 }
 
@@ -211,6 +215,18 @@ class Renderer {
     this.highlight(article);
 
     document.title = document.title.replace(/\.md$/i, "");
+    const sidebar = document.getElementById("md-sidebar");
+
+    window.addEventListener("scroll", () => {
+      const viewportTop = window.scrollY;
+      console.log(viewportTop)
+
+      if (viewportTop > 53) {
+        sidebar.style.top = viewportTop;
+      } else {
+        sidebar.style.top = "0px";
+      }
+    });
 
   }
 

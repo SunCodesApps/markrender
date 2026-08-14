@@ -83,7 +83,6 @@
 
 #md-root .md-toc a {
   text-decoration: none;
-  font-size: 14px;
   color: var(--fgColor-default, #c9d1d9);
   margin-top: 2px;
   margin-bottom: 2px;
@@ -96,28 +95,42 @@
 }
 
 /* Níveis do índice */
+.md-toc-title {
+  border-bottom: 1px solid;
+  padding-bottom: 15px;
+  margin-bottom: 0;
+}
+
 #md-root .level-1 {
   font-weight: bold;
+  font-size: 17pt;
+  line-height: normal;
+  padding-top: 15px;
 }
 
 #md-root .level-2 {
-  padding-left: 12px;
+  padding-left: 0px;
+  font-size: large;
 }
 
 #md-root .level-3 {
-  padding-left: 24px;
+  padding-left: 12px;
+  font-size: larger;
 }
 
 #md-root .level-4 {
-  padding-left: 36px;
+  padding-left: 24px;
+  font-size: medium;
 }
 
 #md-root .level-5 {
-  padding-left: 48px;
+  padding-left: 36px;
+  font-size: small;
 }
 
 #md-root .level-6 {
-  padding-left: 60px;
+  padding-left: 48px;
+  font-size: smaller;
 }
 
 /* Markdown */
