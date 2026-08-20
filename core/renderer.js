@@ -228,6 +228,36 @@ class Renderer {
       }
     });
 
+    function addCopyButtons() {
+      document.querySelectorAll("pre").forEach((pre) => {
+        if (pre.querySelector(".copy-code-button")) return;
+
+        const code = pre.querySelector("code");
+        if (!code) return;
+
+        const button = document.createElement("button");
+        button.className = "copy-code-button";
+        button.textContent = "Copy";
+
+        button.addEventListener("click", async () => {
+          await navigator.clipboard.writeText(code.textContent);
+
+          button.textContent = "Copied!";
+
+          setTimeout(() => {
+            button.textContent = "Copy";
+          }, 1500);
+        });
+
+        pre.style.position = "relative";
+
+
+        pre.appendChild(button);
+      });
+    }
+
+    addCopyButtons();
+
   }
 
 }

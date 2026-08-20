@@ -210,3 +210,13 @@
     max-width: 100%;
   }
 }
+
+.copy-code-button {
+  padding: 5px !important;
+  border: 0 !important;
+  position: absolute !important;
+  top: 8px !important;
+  right: 8px !important;
+  font-size: 9pt !important;
+  background: #0d1117 !important;
+}
